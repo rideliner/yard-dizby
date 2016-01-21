@@ -46,27 +46,29 @@ module YARD
       end
 
       def process_reader(attribute, permission)
-        final = process_impl(attribute, permission) do |obj|
-          signature(obj, "def #{attribute}", "  @config[:#{attribute}]\nend")
-          if obj.docstring.blank?(false)
-            obj.docstring =
-              "Returns the value of configuration attribute #{attribute}"
+        final =
+          process_impl(attribute, permission) do |obj|
+            signature(obj, "def #{attribute}", "  @config[:#{attribute}]\nend")
+            if obj.docstring.blank?(false)
+              obj.docstring =
+                "Returns the value of configuration attribute #{attribute}"
+            end
           end
-        end
 
         store_obj :read, attribute, final
       end
 
       def process_writer(attribute, permission)
-        final = process_impl("#{attribute}=", permission) do |obj|
-          obj.parameters = [['value', nil]]
-          signature(obj, "def #{attribute}=(value)",
-                    "  @config[:#{attribute}] = value\nend")
-          obj.docstring = <<-eos if obj.docstring.blank?(false)
-            Sets the configuration attribute #{attribute}
-            @param value the value to set the attribute #{attribute} to.
-          eos
-        end
+        final =
+          process_impl("#{attribute}=", permission) do |obj|
+            obj.parameters = [['value', nil]]
+            signature(obj, "def #{attribute}=(value)",
+                      "  @config[:#{attribute}] = value\nend")
+            obj.docstring = <<-eos if obj.docstring.blank?(false)
+              Sets the configuration attribute #{attribute}
+              @param value the value to set the attribute #{attribute} to.
+            eos
+          end
 
         store_obj :write, attribute, final
       end

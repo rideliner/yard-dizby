@@ -22,7 +22,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'yard', '> 0.7'
   spec.add_dependency 'bundler', '>= 1.11.2'
-
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rubocop'
 end
