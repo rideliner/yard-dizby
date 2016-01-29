@@ -3,6 +3,6 @@
 
 module YARD
   module Dizby
-    VERSION = '0.0.2'.freeze
+    VERSION = '0.1.0'.freeze
   end
 end
