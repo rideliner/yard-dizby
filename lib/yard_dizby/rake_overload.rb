@@ -13,12 +13,12 @@ module YARD
 end
 
 module DizbyYardocTaskExtension
-  def initialize(name = :yard, &block)
+  def initialize(name = :yard)
     super(name) do |task|
       task.options += ['--template-path', YARD::Dizby.template_path]
-      block.call(task) if block
+      yield task if block_given?
     end
   end
 end
 
-YARD::Rake::YardocTask.send(:prepend, DizbyYardocTaskExtension)
+YARD::Rake::YardocTask.__send__(:prepend, DizbyYardocTaskExtension)

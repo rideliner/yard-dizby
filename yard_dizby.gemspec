@@ -1,10 +1,10 @@
 # encoding: utf-8
 # Copyright (c) 2016 Nathan Currier
 
-require './lib/yard-dizby/version'
+require './lib/yard_dizby/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'yard-dizby'
+  spec.name          = 'yard_dizby'
   spec.version       = YARD::Dizby::VERSION
   spec.authors       = ['Nathan Currier']
   spec.email         = ['nathan.currier@gmail.com']
@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.description   = 'YARD plugin for Dizby'
   spec.summary       = 'YARD plugin to ease documenting Dizby'
-  spec.homepage      = 'https://github.com/rideliner/yard-dizby'
+  spec.homepage      = 'https://github.com/rideliner/yard_dizby'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.bindir        = 'bin'

@@ -1,9 +1,5 @@
 ---
 
-Style/FileName:
-  Exclude:
-    - lib/yard-dizby.rb
-
 Style/Documentation:
   Enabled: false
 
