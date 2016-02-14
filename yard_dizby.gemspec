@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = YARD::Dizby::VERSION
   spec.authors       = ['Nathan Currier']
   spec.email         = ['nathan.currier@gmail.com']
-  spec.license       = 'BSD-3-clause'
+  spec.license       = 'MPL-2.0'
 
   spec.description   = 'YARD plugin for Dizby'
   spec.summary       = 'YARD plugin to ease documenting Dizby'
@@ -21,5 +21,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'yard', '> 0.7'
-  spec.add_dependency 'bundler', '>= 1.11.2'
 end
